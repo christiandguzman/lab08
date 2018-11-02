@@ -63,21 +63,23 @@ public class NoteServlet extends HttpServlet {
             NoteService service = new NoteService();
 
             String action = request.getParameter("action");
+            int noteid = Integer.parseInt(request.getParameter("noteid"));
+            Note note;
 
             switch (action) {
-                case "delete": {
-                    int noteid = Integer.parseInt(request.getParameter("noteid"));
-                    service.delete(noteid);
+                case "delete":
 
-                }
-                break;
+                    note = service.get(noteid);
+
+                    service.delete(note);
+
+                    break;
 
                 case "edit":
-                    int noteid = Integer.parseInt(request.getParameter("noteid"));
-                    Note note = service.get(noteid);
+                    note = service.get(noteid);
                     request.setAttribute("contents", note.getContents());
                     session.setAttribute("selectedNote", note);
-                    
+
                     break;
 
                 case "add":
@@ -87,11 +89,11 @@ public class NoteServlet extends HttpServlet {
 
                     break;
                 case "update":
-                    note = (Note)session.getAttribute("selectedNote");
+                    note = (Note) session.getAttribute("selectedNote");
                     String newContents = request.getParameter("contents");
                     service.update(note.getNoteid(), newContents);
                     session.setAttribute("selectedNote", null);
-                    
+
                     break;
             }
 

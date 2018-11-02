@@ -81,7 +81,8 @@ public class NoteDB {
         EntityTransaction trans = em.getTransaction();
         try {
             trans.begin();
-            em.remove(em.merge(note));
+            
+            em.remove(note);
             trans.commit();
             return 1;
         } catch (Exception ex) {
