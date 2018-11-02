@@ -1,7 +1,7 @@
-DROP DATABASE if exists NotesDB;
-CREATE DATABASE NotesDB;
+DROP DATABASE if exists NoteDB;
+CREATE DATABASE NoteDB;
 
-USE NotesDB;
+USE NoteDB;
 
 
 CREATE TABLE users (

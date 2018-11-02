@@ -1,2 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context path="/Week08Lab-JPA"/>
+<Context path="/Week08Lab-JPA">
+  <Resource auth="Container" 
+            driverClassName="com.mysql.jdbc.Driver" 
+            logAbandoned="true" maxActive="20" maxIdle="10" maxWait="-1" 
+            name="jdbc/NoteDB" password="password" removeAbandoned="true"
+            removeAbandonedTimeout="60" type="javax.sql.DataSource" 
+            url="jdbc:mysql://localhost:3306/notedb?zeroDateTimeBehavior=convertToNull" 
+            username="root"/>
+</Context>

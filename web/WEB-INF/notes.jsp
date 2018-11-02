@@ -35,17 +35,17 @@
             </tr>
             <c:forEach var="note" items="${noteList}" varStatus="i" >
                 <tr>
-                    <td>${note.noteId}</td> 
-                    <td>${note.dateCreated}</td>
+                    <td>${note.noteid}</td> 
+                    <td>${note.datecreated}</td>
                     <td>${note.contents}</td>
                 <form method="post" action="note">
                     <input type="hidden" name="action" value="delete">
-                    <input type="hidden" name="noteid" value="${note.noteId}">
+                    <input type="hidden" name="noteid" value="${note.noteid}">
                     <td><input type="submit" value="Delete"></td>
                 </form>
                 <form method="post" action="note">
                     <input type="hidden" name="action" value="edit">
-                    <input type="hidden" name="noteid" value="${note.noteId}">
+                    <input type="hidden" name="noteid" value="${note.noteid}">
                     <td><input type="submit" value="Edit"></td>
                 </form>
                 </tr>
